@@ -1,6 +1,6 @@
 # Bank-API
 REST API to get the Bank List and its branch details for a specific branch.
-# Project :Bank API 
+
 
 ## Assignment
 
