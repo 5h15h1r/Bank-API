@@ -26,10 +26,15 @@ class BankList(APIView):
                 return Response(
                     {"message": "Page number must be greater than zero."},
                     status=status.HTTP_400_BAD_REQUEST)
-
+            
             per_page = 10
             total = all_banks.count()
             last_page = math.ceil(total / per_page)
+
+            if page > last_page:
+                return Response(
+                    {"message": "No data to show"},
+                    status=status.HTTP_200_OK)
 
             start = (page - 1) * per_page
             end = page * per_page
