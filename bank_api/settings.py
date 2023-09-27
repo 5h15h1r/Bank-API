@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
-# django-insecure-=)g)a52t18q%jyn3+m#m%n0y1n99=9a@a+jhc#f)%)g$q&kf2j
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
@@ -79,7 +79,16 @@ WSGI_APPLICATION = 'bank_api.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "mydatabase",
+        "USER": "shishir",
+        "PASSWORD": "8ZPk8WNd2UPhvVa1At5A5bySoQlMcIm7",
+        "HOST": "postgres://shishir:8ZPk8WNd2UPhvVa1At5A5bySoQlMcIm7@dpg-ck9v0etdrqvc739bsg8g-a/mydatabase_fp1l",
+        "PORT": "5432",
+    }
+}
 
 
 db_url = os.environ.get('DATABASE_URL')
