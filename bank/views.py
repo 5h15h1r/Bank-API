@@ -33,7 +33,7 @@ class BankList(APIView):
 
             if page > last_page:
                 return Response(
-                    {"message": "The page number exceeds total no. of pages."},
+                    {"message": "Enter a valid page number"},
                     status=status.HTTP_400_BAD_REQUEST)
 
             start = (page - 1) * per_page
