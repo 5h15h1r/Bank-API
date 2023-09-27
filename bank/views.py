@@ -31,11 +31,6 @@ class BankList(APIView):
             total = all_banks.count()
             last_page = math.ceil(total / per_page)
 
-            if page > last_page:
-                return Response(
-                    {"message": "Enter a valid page number"},
-                    status=status.HTTP_400_BAD_REQUEST)
-
             start = (page - 1) * per_page
             end = page * per_page
 
