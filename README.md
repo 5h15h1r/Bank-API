@@ -62,7 +62,7 @@ Foreign-key constraints:
 
 ```
 
-##Models
+## Models
 Created two models one for bank and other for branches.
 ```
 class Banks(models.Model):
